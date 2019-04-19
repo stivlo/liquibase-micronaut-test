@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: liquibase.micronaut.test
+---
+testFramework: junit
+sourceLanguage: java

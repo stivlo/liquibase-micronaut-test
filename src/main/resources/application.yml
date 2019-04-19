@@ -1,0 +1,29 @@
+micronaut:
+  application:
+    name: liquibase-micronaut-test
+
+endpoints:
+  health:
+    enabled: true
+
+datasources:
+  default:
+    url: jdbc:mysql://127.0.0.1:3306/tradist?zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: pass
+    driverClassName: com.mysql.jdbc.Driver
+
+jpa:
+  default:
+    packages-to-scan:
+      - 'com.propist.entities'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        show_sql: true
+
+liquibase:
+  datasources:
+    default:
+      change-log: 'classpath:db/db-changelog.xml'
